@@ -22,6 +22,9 @@
     <link rel="icon" href="./favicon.png.png" type="image/x-icon">
 </head>
 <body>
+      <div class='spinner-wrapper'>
+            <div class="spinner"></div>
+      </div>
       <header>
               <div class="logo-small">
                     <h1>KN</h1>
@@ -46,6 +49,7 @@
                                     <a class="anchor" href="./blog.html">My Blog</a>
                               </div>
                             </li>
+                        <li><a href="./contact.html">Contact</a></li>
                         <li><a href="./about.html">About me</a></li>
                         <li><a href="./signIn.html">Sign In</a></li>
                     </div>
@@ -224,20 +228,32 @@
                <div class="form-inside-box">
                   <h1 style="font-size: 32px; font-weight: 100;text-align: center; padding: 30px 0px 0px 0px;">Sign In</h1>
                   <div class="signIn-form">
-                         <form class="form-input" action="" method="POST" data-netlify-recaptcha="true" netlify-honeypot="bot-field" data-netlify="true">
-                                <input class="fullName" type="text" placeholder="Full name" name="name">
-                                <small id="fullNameId"></small>
-                                <input class="mobileNo" type="number" placeholder="mobile no" name="number">
-                                <small id="mobileId" ></small>
-                                <input class="email" type="email" placeholder="email" autocomplete="username" name="email">
-                                <small id="emailId"></small>
-                                <input class="password"  type="password" placeholder="password" autocomplete="new-password" name="password">
-                                <small id="passwordId"></small>
-                                <textarea name="message" id="messageId" cols="30" rows="10" placeholder="messages"></textarea>
-                                <input class="file" type="file" name="file">
-                                <div data-netlify-recaptcha="true" ></div>
-                                <button class="form-signIn-btn">Sign in</button>
-                         </form>
+                        <form class="form-input" action="POST" method="post" data-netlify-recaptcha="true" netlify-honeypot="bot-field" data-netlify="true">
+                              <div class="form-control">
+                                    <input class="fullName" type="text" placeholder="Full name" name="name">                                        
+                                    <small id="fullNameId"></small>
+                              </div>
+                              <div class="form-control">
+                                    <input class="mobileNo" type="number" placeholder="mobile no" name="number">                                        
+                                    <small id="mobileId" ></small>
+                              </div>
+                              <div class="form-control">
+                                    <input class="email" type="email" placeholder="email" autocomplete="username" name="email">                                       
+                                    <small id="emailId"></small>
+                              </div>
+                              <div class="form-control">
+                                    <input class="password"  type="password" placeholder="password" autocomplete="new-password" name="password">
+                                    <small id="passwordId"></small>
+                              </div>
+                              <div class="form-control">
+                                    <input class="confirm-password"  type="password" placeholder="confirm password" autocomplete="new-password" name="password">
+                                    <small id="confirmPasswordId"></small>
+                              </div>
+                              <textarea name="message" id="messageId" cols="30" rows="10" placeholder="messages"></textarea>
+                              <input class="file" type="file" name="file">
+                              <div data-netlify-recaptcha="true" ></div>
+                              <button class="form-signIn-btn">Sign in</button>
+                   </form>
                   </div>
                </div>
       </section>
@@ -262,6 +278,7 @@
                     <p style="text-align: center;">Copyright belongs to <a href="#">Kaushik.NathDesign</a> 2021Pvt Ltd</p>
               </div>
       </footer>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
       <script src="./assets/javascript/app.js"></script>
 </body>
 </html>

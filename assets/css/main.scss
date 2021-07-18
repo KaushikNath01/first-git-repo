@@ -283,6 +283,54 @@ nav{
         color: black;
     }
 }
+.spinner-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #151515;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+}
+
+.spinner::before,
+.spinner:after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.spinner:before {
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(90deg, #ff00cc 0%,#333399 100% );
+    animation: spin .5s infinite linear;
+}
+.spinner:after {
+    width: 90%;
+    height: 90%;
+    background-color: #151515;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+
+}
 .experience{
     width: 96%;
     margin: auto;
@@ -441,6 +489,12 @@ nav{
         }
     }
 }
+.success{
+    color: none;
+}
+.error{
+    color: red;
+}
 .signIn-form{
     display: flex;
     justify-content: center;
@@ -461,14 +515,15 @@ input[type=number]::-webkit-outer-spin-button {
   appearance: none;
   margin: 0; 
 }
-.signIn-form > form > input{
+.signIn-form > form > .form-control > input{
     height: 45px;
-    width: 350px;
+    width: 100%;
     border: none;
     border-bottom: 1.3px solid black;
     font-size: 18px;
     font-family: lightP;
     outline: none;
+    background: white;
 }
 .signIn-form > form > textarea{
     border: none;
@@ -498,9 +553,6 @@ input[type=number]::-webkit-outer-spin-button {
     border: none;
     background-color: black;
     color: white;
-}
-#fullNameId, #mobileId, #emailId, #passwordId{
-    color: red;
 }
 .foot-grids{
     background-color: rgb(59, 59, 59);
@@ -1330,7 +1382,7 @@ input[type=number]::-webkit-outer-spin-button {
         margin-top: 5em;
         .portfolio-gallery{
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+            grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
             place-items: center;
             .gallery-item{
                 height: 320px;
